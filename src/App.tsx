@@ -1,6 +1,7 @@
 import React from 'react'
 
 import { Editor } from './components/Editor'
+import { Logo } from './components/Logo'
 
 import './App.scss'
 
@@ -9,7 +10,16 @@ function App() {
     <div className="page">
       <div className="top-bar-thing"></div>
 
-      <h1 style={{ margin: '2rem 0' }}>GH Pixelz</h1>
+      <div className="header">
+        <div className="logo">
+          <Logo />
+        </div>
+
+        <div className="text">
+          <h1>GH Pixelz</h1>
+          <p>Generate pixel art in the style of the GitHub contributions chart</p>
+        </div>
+      </div>
 
       <Editor />
     </div>
