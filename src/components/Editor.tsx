@@ -2,7 +2,7 @@ import React from 'react'
 
 import { DayRect } from './DayRect'
 
-export const Editor = () => {
+export const Editor: React.FC<{ mouseIsDown: boolean }> = ({ mouseIsDown }) => {
   return (
     <div className="calendar-graph">
       <svg viewBox="0 0 828 128">
@@ -11,13 +11,13 @@ export const Editor = () => {
             const xVal = -(i - 16)
             return (
               <g transform={`translate(${i * 16}, 0)`}>
-                <DayRect x={xVal} y={0} />
-                <DayRect x={xVal} y={15} />
-                <DayRect x={xVal} y={30} />
-                <DayRect x={xVal} y={45} />
-                <DayRect x={xVal} y={60} />
-                <DayRect x={xVal} y={75} />
-                <DayRect x={xVal} y={90} />
+                <DayRect x={xVal} y={0} mouseIsDown={mouseIsDown} />
+                <DayRect x={xVal} y={15} mouseIsDown={mouseIsDown} />
+                <DayRect x={xVal} y={30} mouseIsDown={mouseIsDown} />
+                <DayRect x={xVal} y={45} mouseIsDown={mouseIsDown} />
+                <DayRect x={xVal} y={60} mouseIsDown={mouseIsDown} />
+                <DayRect x={xVal} y={75} mouseIsDown={mouseIsDown} />
+                <DayRect x={xVal} y={90} mouseIsDown={mouseIsDown} />
               </g>
             )
           })}
